@@ -1,0 +1,245 @@
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+<link href="text.css" type="text/css" rel="stylesheet"/>
+
+<title>Home Page for Eiffel Tower</title>
+<img src="images/logo.png" align="left">
+<center><img src="images/header.jpg"></center>
+</head>
+
+<body>
+  <div id="header">
+    <div class="nav">
+      <ul>
+        <li class="home"><a href="homepage.html">Home</a></li>
+        <li class="information"><a href="information-page.html">Information</a>
+        </li>
+        <li class="visiting"><a href="visiting-page.html">Visiting</a>
+        </li>
+        <li class="restaurant"><a href="restaurant.html">Restaurant</a>
+        </li>
+        <li class="tickets"><a href="tickets.html">Tickets</a></li>
+        <li class="news"><a href="news-page.html">News</a>
+        </li>
+        <li class="shop"><a href="shop-page.html">Shop</a></li>
+        <li class="contact"><a href="contact-us-page.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+<br />
+<br />
+<div class="rotator">
+	<ul id="rotmenu">
+		<li>
+                	<a href="shop-page.html">Shop</a>
+			<div style="display:none;">
+                        <div class="info_image">shop.jpg</div>
+                        <div class="info_heading">New Shop Items!</div>
+                        	<div class="info_description">
+					Find our latest new avaliable products for sale in the Eiffel Tower store online!
+					Plus sale items and limtied time products! Free delivery now when you spend €25 or more!
+                        		<a href="shop-page.html" class="more">Read more</a>
+                         	</div>
+                    	</div>
+               	 </li>
+
+                 <li>
+                     <a href="visiting-page.html">Visiting</a>
+                     <div style="display:none;">
+                         <div class="info_image">visiting.jpg</div>
+                         <div class="info_heading">New Visiting Hours!</div>
+                         	<div class="info_description">
+			 		Visting hours have changed due to Halloween, Christams and News Years.
+			 		To see the new openging times please go the the 'Visting' page.
+                             		<a href="visiting-page.html" class="more">Read more</a>
+                         	</div>
+                     	</div>
+                 </li>
+
+               	 <li>
+                     	<a href="restaurant.html">Restaurant</a>
+                     	<div style="display:none;">
+                       	<div class="info_image">eiffel-restaurant.jpg</div>
+                       	<div class="info_heading">New Restaurant!</div>
+                       		<div class="info_description">
+					Want to eat at the new Eiffel Tower restaurant? Why not book a table now
+					or have a look at our menu's? We will be glad to serve you lunch or dinner.
+					For more details... 
+                             		<a href="restaurant.html" class="more">Read more</a>
+                         	</div>
+                     	</div>
+                 </li>
+
+                 <li>
+                 	<a href="tickets.html">Tickets</a>
+                     	<div style="display:none;">
+                     	<div class="info_image">tickets.jpg</div>
+                        <div class="info_heading">Ticket Sale!</div>
+                        	<div class="info_description">
+			 		Plan to come in a group to the Eiffel Tower? Right now there's a gorup ticket sale
+			 		for €100 which includes 2 adults, 2 children and 2 extra for any age group! For more details...
+                             		<a href="tickets.html" class="more">Read more</a>
+                         	</div>
+                     	</div>
+                 </li>
+
+                 <li>
+                     	<a href="news-page.html">News</a>
+                     	<div style="display:none;">
+                         <div class="info_image">news-slide.jpg</div>
+                         <div class="info_heading">Latest News!</div>
+                         	<div class="info_description">
+                         		From fireworks to new restaurants, find all the latest news about the Eiffel Tower here.
+			 		For monthly subscription to your door or email please contact us.
+                             		<a href="news-page.html" class="more">Read more</a>
+                         	</div>
+                     	</div>
+                 </li>
+	</ul>
+	<div id="rot1">
+		<img src="images/welcome.jpg" width="800" height="300" class="bg" alt=""/>
+		<div class="heading">
+			<h1>Welcome!</h1>
+		</div>
+		<div class="description">
+			<p></p>
+		</div>    
+	</div>
+</div>
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var current = 1;
+                
+                var iterate		= function(){
+                    var i = parseInt(current+1);
+                    var lis = $('#rotmenu').children('li').size();
+                    if(i>lis) i = 1;
+                    display($('#rotmenu li:nth-child('+i+')'));
+                }
+                display($('#rotmenu li:first'));
+                var slidetime = setInterval(iterate,3000);
+				
+                $('#rotmenu li').bind('click',function(e){
+                    clearTimeout(slidetime);
+                    display($(this));
+                    e.preventDefault();
+                });
+				
+                function display(elem){
+                    var $this 	= elem;
+                    var repeat 	= false;
+                    if(current == parseInt($this.index() + 1))
+                        repeat = true;
+					
+                    if(!repeat)
+                        $this.parent().find('li:nth-child('+current+') a').stop(true,true).animate({'marginRight':'-20px'},300,function(){
+                            $(this).animate({'opacity':'0.7'},700);
+                        });
+					
+                    current = parseInt($this.index() + 1);
+					
+                    var elem = $('a',$this);
+                    
+                        elem.stop(true,true).animate({'marginRight':'0px','opacity':'1.0'},300);
+					
+                    var info_elem = elem.next();
+                    $('#rot1 .heading').animate({'left':'-420px'}, 500,'easeOutCirc',function(){
+                        $('h1',$(this)).html(info_elem.find('.info_heading').html());
+                        $(this).animate({'left':'0px'},400,'easeInOutQuad');
+                    });
+					
+                    $('#rot1 .description').animate({'bottom':'-270px'},500,'easeOutCirc',function(){
+                        $('p',$(this)).html(info_elem.find('.info_description').html());
+                        $(this).animate({'bottom':'0px'},400,'easeInOutQuad');
+                    })
+                    $('#rot1').prepend(
+                    $('<img/>',{
+                        style	:	'opacity:0',
+                        className : 'bg'
+                    }).load(
+                    function(){
+                        $(this).animate({'opacity':'1'},600);
+                        $('#rot1 img:first').next().animate({'opacity':'0'},700,function(){
+                            $(this).remove();
+                        });
+                    }
+                ).attr('src','images/'+info_elem.find('.info_image').html()).attr('width','800').attr('height','300')
+                );
+                }
+            });
+        </script>
+<br />
+
+<div class="section group">
+	<div class="col span_1_of_3">
+  		<h3 style="margin-left: 150px; color: white;">Bonjour!</h3>
+			<center>
+				<p class="one">Welcome to the Eiffel Tower website where you can learn about the monument, such as the historic information.
+				You can also find out about the ticket prices, opening times, view the gallery
+				of the Eiffel Tower and contact us if you need any more information. This website allows you to find all the information you need
+				before visting the Eiffel Tower or even is great if you just want basic background information on the monument.</p>
+
+				<br />
+				<img style="width: 300px; height: 250px; border: 2;" src="images/eiffel-tower.jpg" title="Eiffel Tower Fireworks">
+			</center>
+		</div>
+
+		<div class="col span_1_of_3">
+  			<h3 style="margin-left: 130px;">About Us</h3>
+			<center>
+				<p class="two">The Eiffel Tower company who created this website for everyone including
+				tourists, locals and more, aim to give everyone who visits the website or the landmark itself
+				a brilliant experience. We made this website so you can find all the information you need about the Eiffel Tower
+				on one website limiting the amount of reseach you have to do. From tickets to background information, we have it all!
+				We are also opened to your views about what you would like the website to present in future and are open to any questions you 
+				may have about the landmark no matter what topic.</p>
+			</center>
+		</div>
+
+		<div class="col span_1_of_3">
+  			<h3 style="margin-left: 70px; color: white;">More information?</h3>
+			<center>
+				<p class="three">Please find below where you can find more information about the Eiffel Tower
+				including how you can visit and when!</p>
+			</center>
+
+			<div id="dotlist">
+				<ul style="color: white;" type="circle">
+					<li>Information</li>
+						<ul type="disc">
+							<li>General Background</li>
+							<li>Architects & Construction</li>
+							<li>Design</li>	
+						</ul>
+					<li>Visiting</li>
+						<ul type="disc">
+							<li>Opening Times</li>
+							<li>Ticket Prices</li>
+							<li>Maps & Routes to get there</li>	
+						</ul>
+					<li>Restaurant</li>
+						<ul type="disc">
+							<li>Time Table</li>
+							<li>Menu's</li>	
+						</ul>
+					<li>Tickets</li>
+					<li>News</li>
+					<li>Shop</li>
+					<li>Contact</li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+
+
+<div id="footer">
+	<p>Copyright © 2015</p>
+</div>
+
+</body>
+</html>

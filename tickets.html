@@ -1,0 +1,177 @@
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+<link href="text.css" type="text/css" rel="stylesheet"/>
+
+<title>Eiffel Tower Tickets</title>
+<img src="images/logo.png" align="left">
+<center><img src="images/header.jpg"></center>
+
+</head>
+<body>
+    <div id="header">
+    <div class="nav">
+      <ul>
+        <li class="home"><a href="homepage.html">Home</a></li>
+        <li class="information"><a href="information-page.html">Information</a>
+        </li>
+        <li class="visiting"><a href="visiting-page.html">Visiting</a>
+        </li>
+        <li class="restaurant"><a href="restaurant.html">Restaurant</a>
+        </li>
+        <li class="tickets"><a href="tickets.html">Tickets</a></li>
+        <li class="news"><a href="news-page.html">News</a>
+        </li>
+        <li class="shop"><a href="shop-page.html">Shop</a></li>
+        <li class="contact"><a href="contact-us-page.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+<div id="feature">
+	<img style="margin-left: 380px;" src="images/tickets.jpg" width="300" height="200" title="Eiffel Tower Tickets" table border="2">
+</div>
+
+<div class="section group">
+	<div style="margin-left: 160px;" class="col span_1_of_3">
+			<p style="width: 30%;" class="one">Please find the form for booking tickets on the right and if you need to look at the table with the prices 
+			for visits, please find it below.</p>
+
+			<h3 style="margin-left: 10px; color: white;">Ticket Prices</h3>
+			<table border="2">
+
+				<tr>
+					<td bgcolor="white"><b><center>From 1st September 2015</center></b></td>
+					<td bgcolor="white"><b><center>ADULTS</center></b></td>
+					<td bgcolor="white"><b><center>12-14 years</center></b></td>
+					<td bgcolor="white"><b><center>REDUCED RATE <br>(4-11 years) <br>Disabled persons *</center></b></td>
+				</tr>
+
+				<tr>
+					<td bgcolor="white"><center>Lift entrance ticket <br>(valid to 2nd floor)</center></td>
+					<td bgcolor="white"><center>€11,00</center></td>
+					<td bgcolor="white"><center>€8,50</center></td>
+					<td bgcolor="white"><center>€4,00</center></td>
+				</tr>
+
+				<tr>
+					<td bgcolor="white"><center>Lift entrance ticket to top</center></td>
+					<td bgcolor="white"><center>€17,00</center></td>
+					<td bgcolor="white"><center>€14,50</center></td>
+					<td bgcolor="white"><center>€10,00</center></td>
+				</tr>
+
+				<tr>
+					<td bgcolor="white"><center>Stairs entrance ticket <br>(valid to 2nd floor)</center></td>
+					<td bgcolor="white"><center>€7,00</center></td>
+					<td bgcolor="white"><center>€5,00</center></td>
+					<td bgcolor="white"><center>€3,00</center></td>
+				</tr>
+			</table>
+
+			<br />
+			<h5>Children under the age of 4 visit the Eiffel Tower free. Accompanying 
+			adults are charged the individual adult rate.</h5>
+			<p style="width: 30%;" class="one">* Reduced rate applies to persons accompanying disabled people.</p>
+		</div>
+
+		<div style="margin-left: 160px;" class="col span_1_of_3">
+  		<fieldset>
+			<center><h2>Ticket Form</h2>
+			<br />
+
+			<label><b><i>First Name</b></i></label>
+			<input type="text" name="firstname" placeholder="Your text here" required><br />
+
+			<label><b><i>Surname</b></i></label>
+			<input type="text" name="surname" placeholder="Your text here" required><br />
+
+			<label><b><i>DOB</b></i></label>
+			<input type="date" name="date" required><br />
+
+			<label><b><i>Phone Number</b></i></label>
+			<input type="number" name="phone number" placeholder="Your text here" required><br />
+
+			<label><b><i>Email</b></i></label>
+			<input type="email" name="email" placeholder="Your text here" required><br />
+
+			<br />
+			<hr>
+
+			<h2>Amount of Tickets</h2>
+			<label><b><i>Amount of ADULT Tickets needed</b></i></label> &nbsp;
+			<select name="adult" id="adult" value="3">
+ 				<option>0</option>
+ 				<option>1</option>
+  				<option>2</option>
+  				<option>3</option>
+  				<option>4</option>
+  				<option>5</option>
+			</select>
+			<input type="adult" name="adult" placeholder="Other" required><br />
+
+			<label><b><i>Amount of 12-14 YEARS Tickets needed</b></i></label> &nbsp;
+			<select name="years" id="years" value="3">
+ 				<option>0</option>
+  				<option>1</option>
+  				<option>2</option>
+  				<option>3</option>
+  				<option>4</option>
+  				<option>5</option>
+			</select>
+			<input type="years" name="years" placeholder="Other" required><br />
+
+			<label><b><i>Amount of 4-11 YEARS Tickets needed</b></i></label> &nbsp;
+			<select name="tickets" id="tickets" value="3">
+  				<option>0</option>
+  				<option>1</option>
+  				<option>2</option>
+  				<option>3</option>
+  				<option>4</option>
+  				<option>5</option>
+			</select>
+			<input type="reduced" name="reduced" placeholder="Other" required><br />
+
+			<br />
+			<hr>
+
+			<h2>Payment</h2>
+			<label><b><i>Card Type</i></b></label>
+			<select name="type" id="type" value="3">
+  				<option>Visa Debit</option>
+  				<option>Visa Electron</option>
+  				<option>MasterCard</option>
+  				<option>Gift Card</option>
+			</select>
+
+			<br />
+			<br />
+
+			<label><b><i>Name On Card</b></i></label>
+			<input type="card" name="card" placeholder="Your text here" required><br />
+
+			<label><b><i>Expiry Date</b></i></label>
+			<input type="date" name="date" required><br />
+
+			<label><b><i>Card Number</b></i></label>
+			<input type="number" name="card number" placeholder="Your text here" required><br />
+
+			<label><b><i>Issue Number</b></i></label>
+			<input type="number" name="issue number" placeholder="Your text here" required><br />
+		
+			<br />
+			<hr>
+			<br />
+
+			<input type="submit">
+		</fieldset>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+	<p>Copyright © 2015</p>
+</div>
+
+</body>
+</html>
